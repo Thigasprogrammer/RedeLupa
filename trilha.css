@@ -1,0 +1,617 @@
+:root {
+    --bg-color: #fbfcee;
+    --text-dark: #1a1a1a;
+    --accent-purple: #39b88e;
+    --accent-green: #c8d69b;
+    --accent-pink: #3971b8;
+    --accent-orange: #ffb87a;
+}
+
+/* ================= RESET BASE ================= */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: var(--bg-color);
+    margin: 0;
+    color: var(--text-dark);
+    overflow-x: hidden;
+}
+
+/* ================= HEADER ================= */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 8%;
+    background: #f6e6a5;
+}
+
+.logo img {
+    height: 60px;
+}
+
+nav a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: var(--text-dark);
+    font-size: 0.9rem;
+}
+
+.btn-telegram {
+    border: 1px solid #ccc;
+    padding: 8px 20px;
+    border-radius: 20px;
+    text-decoration: none;
+    color: var(--text-dark);
+}
+
+/* ================= HERO ================= */
+.hero {
+    text-align: center;
+    padding: 50px 5%;
+}
+
+.cards-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 60px;
+    flex-wrap: wrap;
+}
+
+.card {
+    width: 180px;
+    height: 240px;
+    border-radius: 25px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    transition: transform .4s ease, box-shadow .4s ease;
+}
+
+.card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 20px 30px rgba(0,0,0,0.1);
+}
+
+.card img {
+    width: 100%;
+    border-radius: 15px;
+}
+
+.badge {
+    background: white;
+    padding: 5px 12px;
+    border-radius: 15px;
+    font-size: 0.7rem;
+    align-self: flex-start;
+}
+
+.card-pink { background-color: var(--accent-pink); }
+.card-purple { background-color: var(--accent-purple); }
+.card-green { background-color: var(--accent-green); }
+.card-orange { background-color: var(--accent-orange); }
+
+.hero-title-area h1 {
+    font-size: clamp(2.8rem, 6vw, 5rem);
+    margin: 0;
+    font-weight: 500;
+    color: #3971b8;
+}
+
+.hero-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.btn-cta {
+    background-color: #c8d69b;
+    border: none;
+    padding: 15px 32px;
+    border-radius: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform .3s ease, box-shadow .3s ease;
+}
+
+.btn-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 0 #a3b57b;
+}
+
+/* ================= FEATURES ================= */
+.features {
+    padding: 100px 10%;
+    text-align: center;
+}
+
+.tags-cloud {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    max-width: 900px;
+    margin: 40px auto;
+}
+
+.tag {
+    background: #f6e6a5;
+    padding: 12px 25px;
+    border-radius: 50px;
+    border: 1px solid #343b1b;
+    font-size: 0.85rem;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+}
+
+/* ================= FORMATS ================= */
+.formats {
+    padding: 50px 8%;
+}
+
+.formats h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+}
+
+.formats h2 span {
+    color: #3971b8;
+}
+
+.format-grid {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.format-card {
+    flex: 1;
+    min-width: 260px;
+}
+
+.format-img {
+    width: 100%;
+    border-radius: 20px;
+    margin-bottom: 15px;
+    height: 300px;
+    object-fit: cover;
+}
+
+.label {
+    display: inline-block;
+    background: #c8d69b;
+    padding: 5px 20px;
+    border-radius: 15px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* ================================================================= */
+/* ===================== TRILHA (NOVA SEÇÃO) ======================== */
+/* ================================================================= */
+
+.trail-lessons {
+    padding: 80px 6%;
+    background: linear-gradient(180deg, #fbfcee, #c8d69b);
+}
+
+/* PROGRESSO */
+.trail-progress {
+    max-width: 500px;
+    margin: 0 auto 50px;
+    text-align: center;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 10px;
+    background: #f6e6a5;
+    border-radius: 20px;
+    overflow: hidden;
+    margin-top: 10px;
+}
+
+.progress-fill {
+    height: 100%;
+    width: 0%;
+    background: #3971b8;
+    transition: width .5s ease;
+}
+
+/* GRID DAS AULAS */
+.lesson-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 24px;
+}
+
+.lesson-box {
+    background: #f6e6a5;
+    border-radius: 22px;
+    padding: 30px 20px;
+    text-align: center;
+    font-weight: 600;
+    cursor: pointer;
+    position: relative;
+    transition: transform .4s ease, box-shadow .4s ease;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    color: #343b1b;
+}
+
+.lesson-box::after {
+    content: "Abrir";
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.75rem;
+    opacity: 0.5;
+}
+
+.lesson-box:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 35px rgba(0,0,0,0.1);
+}
+
+/* ================= MODAL AULA ================= */
+.lesson-modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(36, 37, 35, 0.6);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+}
+
+.lesson-content {
+    background: #f6e6a5;
+    border-radius: 28px;
+    padding: 40px 32px;
+    width: min(90%, 420px);
+    animation: modalUp .4s ease;
+}
+
+.lesson-content h3 {
+    margin-top: 0;
+    color: #3971b8;
+}
+
+.lesson-content ul {
+    padding-left: 20px;
+}
+
+.close-modal {
+    position: absolute;
+    top: 18px;
+    right: 22px;
+    background: none;
+    border: none;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+/* ================= FINAL ================= */
+.final-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+.final-content {
+    background: #fff;
+    padding: 40px;
+    border-radius: 25px;
+    text-align: center;
+    position: relative;
+    animation: pop .4s ease;
+}
+
+.close-final {
+    position: absolute;
+    top: 16px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 28px;
+    cursor: pointer;
+    font-weight: bold;
+    color: #555;
+}
+
+.close-final:hover {
+    color: #000;
+    transform: scale(1.15);
+}
+
+
+/* ================= ANIMAÇÕES ================= */
+@keyframes modalUp {
+    from {
+        transform: translateY(40px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes pop {
+    0% { transform: scale(.8); }
+    60% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+/* ================= MOBILE (APP FEEL) ================= */
+@media (max-width: 768px) {
+
+    header {
+        padding: 14px 5%;
+    }
+
+    nav {
+        display: none;
+    }
+
+    .hero {
+        padding: 30px 5%;
+    }
+
+    .lesson-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .lesson-content {
+        padding: 32px 24px;
+    }
+}
+/* ================= MODAL SCROLL INTERNO ================= */
+.lesson-body-scroll {
+    max-height: 45vh; /* não ocupa a tela toda */
+    overflow-y: auto;
+    padding-right: 10px;
+    margin-bottom: 20px;
+}
+
+/* Scroll bonito */
+.lesson-body-scroll::-webkit-scrollbar {
+    width: 6px;
+}
+
+.lesson-body-scroll::-webkit-scrollbar-track {
+    background: rgba(0,0,0,0.05);
+    border-radius: 10px;
+}
+
+.lesson-body-scroll::-webkit-scrollbar-thumb {
+    background: #3971b8;
+    border-radius: 10px;
+}
+
+/* ================= CONTROLES DE ÁUDIO ================= */
+.lesson-audio-controls {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.lesson-audio-controls button {
+    border: none;
+    padding: 8px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    background: #fff;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+/* ================= AÇÕES ================= */
+.lesson-actions {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.btn-secondary {
+    background: transparent;
+    border: 2px solid #3971b8;
+    color: #3971b8;
+    padding: 14px 26px;
+    border-radius: 30px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.btn-secondary:hover {
+    background: #3971b8;
+    color: #fff;
+}
+/* =========================
+   HEADER + HAMBURGER
+========================= */
+
+.site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    position: relative;
+}
+
+/* NAV */
+.nav {
+    display: flex;
+    gap: 30px;
+}
+
+/* HAMBURGER */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+    cursor: pointer;
+}
+
+.hamburger span {
+    width: 26px;
+    height: 2px;
+    background: #000;
+    transition: 0.3s;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px) {
+
+    .nav {
+        position: absolute;
+        top: 80px;
+        right: 20px;
+        background: #fff;
+        border-radius: 16px;
+        padding: 25px;
+        flex-direction: column;
+        gap: 20px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+
+        opacity: 0;
+        pointer-events: none;
+        transform: translateY(-10px);
+        transition: 0.3s;
+        z-index: 1000;
+    }
+
+    .nav.active {
+        opacity: 1;
+        pointer-events: auto;
+        transform: translateY(0);
+    }
+
+    .hamburger {
+        display: flex;
+    }
+}
+
+/* =========================
+   ANIMAÇÃO HAMBURGER
+========================= */
+
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(6px, 6px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* ================= CHATBOX ================= */
+
+/* Esconder mascote */
+.hiddenLupi {
+    display: none !important;
+}
+
+/* Botão de abrir chat */
+
+.open-button {
+    background-color: rgba(255, 253, 253, 0);
+    padding: 1px 10px;
+    border: none;
+    cursor: pointer;
+    position: fixed;
+    bottom: -15px;
+    right: -30px;
+}
+
+/* Coonfigurações da imagem (Lupi)*/
+.open-button img {
+    width: 250px;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+.open-button:hover img{
+    transform: scale(1.1) translateY(-10px);
+    filter: brightness(1.1);
+}
+
+/* Container do chat */
+.chat-popup {
+    display: none;
+    position: fixed;
+    bottom: 80px;
+    right: 15px;
+    border: 1px solid #f1f1f1;
+    border-radius: 10px;
+    background-color: white;
+    width: 300px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    z-index: 9;
+}
+
+.form-container { padding: 15px; }
+
+/* Área das mensagens */
+.chat-history {
+    height: 250px;
+    overflow-y: auto;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 10px;
+    padding: 10px;
+    background: #f9f9f9;
+    display: flex;
+    flex-direction: column;
+}
+
+.message {
+    padding: 8px;
+    border-radius: 5px;
+    margin-bottom: 8px;
+    max-width: 80%;
+}
+.user-msg { background-color: #d1e7dd; align-self: flex-end; }
+.bot-msg { background-color: #e2e3e5; align-self: flex-start; }
+
+/* Área das opções rápidas */
+.quick-replies {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-bottom: 10px;
+}
+.reply-btn {
+    background-color: #0d6efd;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.btn-close {
+    background-color: #dc3545;
+    width: 100%;
+    padding: 10px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+}
